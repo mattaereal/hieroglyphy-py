@@ -245,15 +245,15 @@ if __name__ == "__main__":
                 print "I/O error({0}): {1}".format(e.errno, e.strerror)
             else:
                 js = f.read();f.close()
-                print "[*] Encoded below:", sys.argv[2]
+                sys.stderr.write("[*] Encoded script below: " + sys.argv[2] + "\n")
                 print hy.hieroglyphyScript(js.strip())
 
         elif 'number' == sys.argv[1]:
-            print "[*] Encoded below:", sys.argv[2]
+            sys.stderr.write("[*] Encoded number below: " + sys.argv[2] + "\n")
             print hy.hieroglyphyNumber(sys.argv[2])
 
         elif 'string' == sys.argv[1]:
-            print "[*] Encoded below:", sys.argv[2]
+            sys.stderr.write("[*] Encoded string below: " + sys.argv[2] + "\n")
             print hy.hieroglyphyString(sys.argv[2])
 
         else:
@@ -261,5 +261,9 @@ if __name__ == "__main__":
             sys.exit(2)
         sys.exit(0)
     else:
-        print "usage: %s script <File>|number <Number>|string <String>" % sys.argv[0]
+        print "[!] Usage: %s script <File>|number <Number>|string <String>" % sys.argv[0]
+        print "[!] Examples:"
+        print "\t %s script file.js" % sys.argv[0]
+        print "\t %s string \"alert('xss')\"" % sys.argv[0]
+        print "\t %s number 1337" % sys.argv[0]
         sys.exit(2)
