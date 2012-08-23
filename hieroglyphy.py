@@ -3,7 +3,7 @@
 
 # Copyright (c) <2012> <Matías Ariel Ré Medina>
 # Hieroglyphy, port from JavasCript version by <Patricio Palladino>
-# link al github de pato
+# alcuadrado@github ~ mattaereal@github
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -30,19 +30,33 @@ class Hieroglyphy:
         """
         Here we define our alphabet.
         """
+        #self.numbers = [
+        #            "+[]",
+        #            "+!![]",
+        #            "!+[]+!![]",
+        #            "!+[]+!![]+!![]",
+        #            "!+[]+!![]+!![]+!![]",
+        #            "!+[]+!![]+!![]+!![]+!![]",
+        #            "!+[]+!![]+!![]+!![]+!![]+!![]",
+        #            "!+[]+!![]+!![]+!![]+!![]+!![]+!![]",
+        #            "!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]",
+        #            "!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]"
+        #]
+
         self.numbers = [
                     "+[]",
-                    "+!![]",
-                    "!+[]+!![]",
-                    "!+[]+!![]+!![]",
-                    "!+[]+!![]+!![]+!![]",
-                    "!+[]+!![]+!![]+!![]+!![]",
-                    "!+[]+!![]+!![]+!![]+!![]+!![]",
-                    "!+[]+!![]+!![]+!![]+!![]+!![]+!![]",
-                    "!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]",
-                    "!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]"
+                    "-~[]",
+                    "-~-~[]",
+                    "-~-~-~[]",
+                    "-~-~-~-~[]",
+                    "-~-~-~-~-~[]",
+                    "-~-~-~-~-~-~[]",
+                    "-~-~-~-~-~-~-~[]",
+                    "-~-~-~-~-~-~-~-~[]",
+                    "-~-~-~-~-~-~-~-~-~[]"
         ]
 
+        
         self.characters = {
                     "0" : "(" + self.numbers[0] + "+[])",
                     "1" : "(" + self.numbers[1] + "+[])",
@@ -185,10 +199,11 @@ class Hieroglyphy:
         """
         Returns a hieroglyphied single character.
         """
-        charCode = ord(char)
 
         if (char in self.characters):
             return self.characters[char]
+
+        charCode = ord(char)
 
         if ((char == "\\") or (char == "x")):
             ##These chars must be handled appart becuase the others need them
