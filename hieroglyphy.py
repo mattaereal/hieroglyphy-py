@@ -185,10 +185,11 @@ class Hieroglyphy:
         """
         Returns a hieroglyphied single character.
         """
-        charCode = ord(char)
-
+        # if we already know about this char, just look it up and return it
         if (char in self.characters):
             return self.characters[char]
+            
+        charCode = ord(char)
 
         if ((char == "\\") or (char == "x")):
             ##These chars must be handled appart becuase the others need them
