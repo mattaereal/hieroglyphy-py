@@ -230,7 +230,41 @@ class Hieroglyphy:
         return self.functionConstructor + "("  + self.hieroglyphyString(src) \
                 + ")()"
 
-
+    def doFullDebug (self):
+        sys.stderr.write("[*] *************************************\n")
+        sys.stderr.write("[*] NUMBERS\n")
+        sys.stderr.write("[*] *************************************\n")
+        for idx, value in enumerate(self.numbers):
+            sys.stderr.write("NUMBER:  " + str(idx) + " is " + str(value) + " (length=" + str(len(value)) +")"+ "\n")
+        sys.stderr.write("[*] *************************************\n")
+        sys.stderr.write("[*] CHARACTERS\n")
+        sys.stderr.write("[*] *************************************\n")
+        keys = self.characters.keys()
+        keys.sort()
+        for key in keys:
+            val = self.characters[key]
+            sys.stderr.write("CHAR:  " + str(key) + " is " + str(val) + " (length=" + str(len(val)) +")" + "\n")
+        sys.stderr.write("[*] *************************************\n")
+        sys.stderr.write("[*] KEYWORDS\n")
+        sys.stderr.write("[*] *************************************\n")
+        kw = {
+                "_object_Object"         :   self._object_Object,
+                "_NaN"                   :   self._NaN,
+                "_true"                  :   self._true,
+                "_false"                 :   self._false,
+                "_undefined"             :   self._undefined,
+                "functionConstructor"   :   self.functionConstructor,
+                '_1e100'                  :   self._1e100,
+                "locationString"        :   self.locationString,
+                "escape"                :   self.escape,
+                "unescape"              :   self.unescape,
+                "_Infinity"              :   self._Infinity
+        }
+        keys = kw.keys()
+        keys.sort()
+        for key in keys:
+            val = kw[key]
+            sys.stderr.write("KEYWORD:  " + str(key) + " is " + str(val) + " (length=" + str(len(val)) +")" + "\n")
 
 if __name__ == "__main__":
     sys.stderr.write("# Copyright (c) <2012> <Matías Ariel Ré Medina>\n")
@@ -238,6 +272,9 @@ if __name__ == "__main__":
     sys.stderr.write("<Patricio Palladino>\n")
     
     hy = Hieroglyphy()
+    doDebug = False
+    if doDebug == True:
+        hy.doFullDebug()
 
     if len(sys.argv) == 3:
         if 'script' == sys.argv[1]:
