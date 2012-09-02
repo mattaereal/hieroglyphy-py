@@ -216,7 +216,7 @@ class Hieroglyphy:
         """
         Returns a hieroglyphied number as a number.
         """
-		n = int(n)
+        n = int(n)
         if (n <= 9): 
             return self.numbers[n]
 
