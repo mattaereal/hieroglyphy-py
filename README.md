@@ -22,5 +22,6 @@ You can use the class inside the python file or use it as a stand-alone script.
     [*] Encoded string below: alert
     (+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][+[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]
 
-### If you liked this check out [pyronbee](http://github.com/mattaereal/pyronbee)
-### and learn how to use the encodings to detect how good are your WAF rules.
+#### If you liked this check out
+    [pyronbee](http://github.com/mattaereal/pyronbee) and learn how to use the
+    encodings to detect how good are your WAF rules.
