@@ -56,7 +56,7 @@ class Hieroglyphy:
                     "9" : "(" + self.numbers[9] + "+[])"
         }
 
-        self._object_Object = "{}+[]"
+        self._object_Object = "[]+{}"
         self._NaN = "+{}+[]"
         self._true = "!![]+[]"
         self._false = "![]+[]"
